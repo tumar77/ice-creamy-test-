@@ -1,0 +1,637 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital@0;1&family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500&family=Roboto:ital,wght@0,400;0,900;1,900&family=Zen+Antique&family=Zen+Antique+Soft&display=swap');
+:root{
+    --main-color: rgb(1, 253, 253);
+    --black:#13131a;
+    --bg: rgba(48, 48, 49, 0.68);
+    border: 1rem solid rgba(124, 94, 166, 0.3);
+}
+* {
+
+    font-family:  'Zen Antique','Zen Antique Soft', 'Playfair Display','Roboto','Lobster Two', cursive,serif;;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+html{
+    font-size:62.5%;
+    overflow-x:hidden ;
+    scroll-padding-top: 9rem;
+    scroll-behavior:smooth;
+}
+html::-webkit-scrollbar{
+    width: .8rem;
+
+}
+html::-webkit-scrollbar-track{
+   background: transparent;
+}
+html::-webkit-scrollbar-thumb{
+    background: #f6f4f1;
+    border-radius: 5rem;
+}
+body{
+    background: var(--bg);
+     top:5rem
+}
+section{
+    padding: -1rem 7%;
+
+}
+.heading{
+    text-align: center;
+   color: aliceblue;
+    text-transform: uppercase;
+    padding-bottom: 2.5rem;
+    font-size: 4rem;
+    padding: 1rem;
+   
+
+}
+.heading span{
+    color: var(--main-color);
+    text-transform: uppercase;
+}
+ .btn{/*крестиктердин түгүндөгү кнопка */
+    margin-top: 0;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    color: rgba(122, 2, 2, 0.57);
+    background: var(--main-color);
+    cursor: pointer;
+}
+.btn:hover{
+    letter-spacing: .2rem;
+    top: 60px;
+    width: 194px;
+    height: 40px;
+
+/*крестиктердин түгүндөгү кнопка */
+}
+.header{
+    background: #504a40c5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5rem 7%;
+    border-bottom:var(--black);
+    position: fixed;
+    top: -4px;
+    left:0;
+    right: -5px;
+    z-index: 1000;
+}
+.header .logo img{
+    height: 6rem;
+}
+.header .navbar a{
+    margin: 1.1rem;
+    font-size: 1.6rem;
+    color: #fefeffbe;
+}
+.header .navbar a:hover{
+    color: var(--main-color);
+    border-bottom: 0.1rem solid var(--main-color);
+    padding-bottom: .3rem;
+}
+.div-icons {
+    width: 9px;
+}
+.header .icons div{
+    color:#fefeffbe; 
+    cursor: pointer;
+    font-size: 2.5rem;
+    margin-left: 4rem;
+
+}
+.header .icons div:hover{
+  color: var(--main-color);
+}
+#menu-btn{
+    display: none;
+
+} 
+.header .search-form{
+    position: absolute;
+    top: 115%;
+    right: 7%;
+    background: rgb(255, 255, 255);
+    width: 50rem;
+    height: 5rem;
+    display: flex;
+     align-items: center;
+    transform: scaleY(0);
+    transform-origin:top ;
+}
+/* поискавикти жогорудан ылдый түшүрүүчү функция */
+.header .search-form.active{
+   transform: scaleY(1);
+   /* поискавикти жогорудан ылдый түшүрүүчү функция */
+}
+/* бул жер поискавиктин кнопкасы жана жаза турган текст*/
+.header .search-form input{
+ height: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+    color: var(--black);
+    padding: 1rem;
+    text-transform: none;
+}/* бул жер поискавиктин кнопкасы жана жаза турган текст*/
+/* бул поискавиктин өзү */
+.header .search-form label{
+    cursor: pointer;
+    font-size: 2.2rem;
+    margin-right:1.5rem ;
+    color: var(--black);
+}/* бул поискавиктин өзү */
+.header .search-form label:hover{
+color: var(--main-color);
+}
+.header .cart-items-container{
+    position: absolute;
+    top: 100%;
+    right: -100%;    
+    height: calc(100vh - 9.5rem);
+    width: 31rem;
+    background: rgb(255, 255, 255);
+    padding: 0 1.5rem;
+ }/*карзинканы  горизантално корсотуучу функцияны кыймылдатуучу тег */
+.header .cart-items-container.active{
+   right:0 ;
+
+}/*карзинканы  горизантално корсотуучу функцияны кыймылдатуучу тег */
+.header .cart-items-container .cart-item {
+   position: relative;
+    margin: 3rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.header .cart-items-container .cart-item .fa-times {
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--black);
+}
+.header .cart-items-container .cart-item .fa-times :hover{
+ color:var(--main-color) ;/* бул крестиктер */
+}
+.header .cart-items-container .cart-item img {
+    height: 7rem;
+}
+.header .cart-items-container .cart-item .content h3{
+    font-size: 2rem ;
+    color: var(--black);
+    padding-bottom:.5rem ;
+
+}
+.header .cart-items-container .cart-item .content .price{
+    font-size: 1.5rem ;
+    color: var(--main-color); /* түгүндөгү жазуу */
+}
+.header .cart-items-container .btn {
+    width: 100%;
+    text-align: center;
+
+}
+
+
+/* 1 бет */
+.home{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background:url("../img/999.jpg") no-repeat ;
+    background-size: cover;
+    background-position: center;
+
+}
+.home .content{
+    max-width:60rem ;
+}
+.home .content h3{
+   font-size:4.2rem ;
+    text-transform: uppercase;
+    color: #0d4fdd;
+  
+}
+.home .content p{
+    font-size:2rem ;
+    font-weight: lighter;
+    line-height: 2;
+    padding: 3rem 0;
+    color: #0537a2;
+}
+.about .row {
+    display: flex;
+    align-items: center;
+    background: var(--black);
+   flex-wrap: wrap;
+}
+.about .row .img{
+   flex: 1 1 45rem;
+}
+.about .row .img img{
+    width: 100%;
+}
+.about .row .content{
+    flex:  1 1 45rem;
+    padding: 2rem;
+}
+.about .row .content h3{
+ font-size: 4rem;
+    color: white;
+}
+.about .row .content p{
+    font-size:2rem;
+                font-weight: lighter;
+    color: white;
+    padding: 2rem 0;
+    line-height:1.8;
+}
+/*меню*/
+.menu .box-container{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+ line-height: 1.8;
+
+
+}
+.menu .box-container .box{
+    padding: 2rem;
+    text-align: center;
+    border:0.2rem solid rgba(255,255,255,.3);
+              background: rgba(112, 152, 238, 0.47);
+}
+.menu .box-container .box img{
+    height: 10rem;
+    border-radius: 50%;
+
+
+}
+.menu .box-container .box h3{
+  color: white;
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+.menu .box-container .box .price{
+    color: white;
+    font-size: 2.5rem;
+    padding: .5rem 0;
+}
+.menu .box-container .box .price span{
+  text-decoration: line-through;
+    font-size: 1.5rem;
+
+}
+ /* квадраттын ичиндеги түс */
+.menu .box-container .box:hover{
+  background: rgba(219, 229, 169, 0.94);
+}
+/* квадраттын ичиндеги түс өзгөргөндө ,жазуунун өңү */
+.menu .box-container .box:hover > *{
+  color: #5e3170;
+}
+.products .box-container{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: .5rem;
+}
+.products .box-container .box{
+    text-align: center;
+    border:0.3rem solid rgba(255,255,255,.3) ;
+    padding: 0;
+           background: rgba(112, 152, 238, 0.47);
+}/*  бул иконканын местасы өңү */
+.products .box-container .box .icons a{
+   height: 3rem;
+    width:3rem ;
+    line-height: 3rem;
+    font-size: 2rem;
+    border:0.1rem solid rgba(255,255,255,.3) ;
+    color: white;
+    margin: 2rem;
+    /*  бул иконканын местасы өңү */
+}
+.products .box-container .box .icons a:hover{
+    background: var(--main-color);
+}
+.products .box-container .box img{
+    padding: 2.5rem 0;
+}
+.products .box-container .box img img{
+ height: 25rem;
+}
+.products .box-container .box .content h3{
+    color: white;
+    font-size: 2.5rem;
+}
+
+.products .box-container .box .content .starts{
+    padding: 1.5rem;
+
+}
+.products .box-container .box .content .starts i{
+    font-size: 1.7rem;
+    color: var(--main-color );
+}
+.products .box-container .box .content .price{
+ color: white;
+    font-size: 2.5rem;
+}
+.products .box-container .box .content .price span{
+    text-decoration: line-through;
+     font-weight: lighter;
+    font-size: 1.5rem;
+}
+
+.review .box-container{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: .5rem;
+}
+.review .box-container .box {
+    border:0.3rem solid rgba(255,255,255,.3) ;
+    text-align: center;
+    padding: 3rem 2rem;
+    background: rgba(53, 111, 142, 0.09);
+}
+.review .box-container .box p{
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: white;
+    padding: 2rem 0;
+}
+.review .box-container .box .user{
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    object-fit: cover;
+
+
+}
+.review .box-container .box h3{
+    padding: 1rem 0;
+    font-size:2rem ;
+    color: white;
+}
+
+.review .box-container .box .starts i{
+    color: var(--main-color);
+    font-size:1.5rem ;
+
+}
+.review .box-container .box img{
+    width: 150px;
+    height: 120px;
+}
+
+.contact .row{
+    display: flex;
+    background: rgba(37, 36, 36, 0.3);     
+    flex-wrap: wrap;
+    gap: 1rem;
+    
+
+}
+.contact .row .map{
+    flex:  1 1 45rem;
+    width: 100%;
+    object-fit: cover;
+} 
+.contact .row .form{
+    flex: 1 1 45rem;
+    padding: 5rem 2rem;
+    text-align:center;
+   
+}
+
+
+.contact .row .form .inputBox{
+  display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    background:var(--black) ;
+    border:0.1rem solid rgba(124, 94, 166, 0.3);  background: rgba(16, 17, 17, 0.47);;
+}
+.contact .row form .inputBox span{
+    color: white;
+    font-size: 2rem;
+    padding-left:6rem ;
+}
+/* инпуттун ичндеги жазууну кандай тустө болорун ичиндеги тамгалардын размерлери и т.д.  */
+.contact .row form .inputBox input{
+    width:38rem ;
+    padding: 1.1rem 2rem;
+    font-size: 1.7rem;
+    color: white;
+    text-transform: none;
+    background: none; 
+   /* инпуттун ичндеги жазууну кандай тустө болорун ичиндеги тамгалардын размерлери и т.д.  */ 
+}
+
+.blogs .box-container{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem; 
+    
+}
+
+.blogs .box-container .box {
+    border: 0.3rem solid rgba(100, 99, 99, 0.3);
+    background: #61615b;
+}
+/* кыймыл */
+.blogs .box-container .box .img{
+    height: 25rem;
+    overflow: hidden;
+    width:100% ;
+}
+.blogs .box-container .box .img img{
+    height: 100%;
+   object-fit:cover ;
+    width:100% ;
+}
+.blogs .box-container .box:hover .img img{
+   transform: scale(1.2);
+}
+/* кыймыл */
+.blogs .box-container .box .content{
+padding: 2rem;
+
+}
+
+.blogs .box-container .box .content.title {
+   font-size: 3rem;
+   line-height:1,5 ;
+  color: #f6f4f1;
+}
+.blogs .box-container .box .content.title h3{
+    font-size: 6rem;
+    line-height:1,5 ;
+    color: #fcf9fc;
+}
+.blogs .box-container .box .content .title:hover{
+    color:#f6f4f1;
+}
+.blogs .box-container .box .content span{
+    color: var(--main-color);
+    display: block;
+    padding-top: 1rem;
+    font-size: 1rem;
+}
+.blogs .box-container .box .content p{
+    font-size: 0.7rem;
+    line-height: 1.8;
+    padding: 1rem 0;
+    color:#f6f4f1 ;
+
+}
+.footer{
+    background:var(--black) ;
+text-align: center;
+}
+.footer .shar{
+    padding:0 0 ;
+   
+}
+.footer .shar a   {
+   height:5rem ;
+   width: 5rem ;
+   line-height: 5rem;
+   font-size: 2rem;
+   color: rgb(245, 243, 243);
+  border:0.1rem solid rgba(255, 255, 255, 0.493);/* тегерек квадрат  рамка */
+   margin: 1rem;
+   border-radius: 50%;
+   
+   
+}
+.footer .shar a:hover{
+    background-color: var(--main-color);
+
+}
+.footer .links{
+    display: flex;
+    justify-content:center ;
+    flex-wrap: wrap;
+    padding: 1px 1px;
+    gap: 0;
+    
+}
+.footer .links a{
+    padding:0rem 2rem ;
+    color: whitesmoke;
+    border: var(--main-color);
+    font-size: 1.rem;
+    border-radius: 4% ;
+    width: 13rem;
+    height: 5rem;
+    border:0.1rem solid rgba(252, 252, 252, 0.377);
+
+} 
+.footer .links a:hover{
+   background: var(--main-color); 
+}
+.footer .creadit {
+ 
+  margin: 1.1rem;
+    font-size: 1.6rem;
+    color: #ffffff;
+  
+}
+.footer .creadit span{
+    color: var(--main-color);
+}
+
+
+
+
+
+
+
+
+
+
+/* мобилный ширена */
+@media  (max-width: 991px){
+    html{
+        font-size: 55%;
+    }
+    .header{
+    padding:1.5rem 2.5rem;
+    border: 0.2em solid rgba(14, 13, 13, 0.993);
+    }
+    section{
+        padding: 3rem ;
+
+    }
+}/* мобилный ширена */
+
+@media  (max-width: 768px){
+   #menu-btn{
+             display: inline-block;
+
+   }
+    .header .navbar{
+        position: absolute;
+        top:100%;
+       right: -100%; 
+        background: #ffffff;
+         width: 124px;
+        height: calc(100vh - 9.5rem);
+
+    }
+    .header .navbar.active{
+        right: 0;
+    }
+
+.header .navbar a{
+    color:var(--black) ;
+    display: block;
+    margin: 1.5rem;
+    padding: 2rem;
+    font-size: 2rem;
+}
+.header .search-form {
+    width: 90%;
+    right: 2rem;
+
+}
+@media  (max-width: 450px){
+    html{
+        font-size: 50%;
+    }
+    
+/* 0 */
+
+.home{
+    background-position: left;
+    justify-content: center;
+    text-align: center;
+}
+.home .content h3{
+    font-size: 4.5rem;
+}
+    .home .content p{
+        font-size: 1.5rem;
+    }
+}
+
+/* 0 */
+
+@media  (max-width: 450px){
+    html{
+        font-size: 50%;
+    }
+
+    }
